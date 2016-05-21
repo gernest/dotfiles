@@ -22,6 +22,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'dleonard0/pony-vim-syntax'
 Plugin 'keith/swift.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'gernest/lily.vim'
+Plugin 'rhysd/vim-crystal'
+Plugin 'lluchs/vim-wren'
 call vundle#end()            " required
 
 " Add merlin for Ocaml developemn
@@ -76,6 +79,9 @@ nnoremap <C-H> <C-W><C-H>"
 
 set splitbelow
 set splitright
+
+set number
+set relativenumber
 
 "nerd tree
 map <C-n> :NERDTreeToggle<CR>
