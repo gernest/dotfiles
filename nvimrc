@@ -29,7 +29,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
@@ -131,6 +131,10 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
+" open help vertically
+command! -nargs=* -complete=help Help vertical belowright help <args>
+autocmd FileType help wincmd L
+
 " show line numbers
 set number
 set relativenumber
@@ -168,6 +172,9 @@ set smartcase
 set bomb
 set binary
 
+" Text
+set textwidth=80
+set colorcolumn=+1
 
 " Enter automatically into the files directory
 autocmd BufEnter * silent! lcd %:p:h
@@ -292,6 +299,7 @@ let g:vimshell_prompt =  '$ '
 " terminal emulation
 if g:vim_bootstrap_editor == 'nvim'
   nnoremap <silent> <leader>sh :terminal bash<CR>
+  tnoremap <Esc> <C-\><C-n>
 else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
@@ -363,10 +371,6 @@ nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-"" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
@@ -434,12 +438,10 @@ endif
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 
 "" Close buffer
-noremap <leader>c :bd<CR>
+noremap <leader>co :bd!<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
@@ -463,11 +465,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 
 "" Custom configs
 
-" split windows
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>"
 
 set splitbelow
 set splitright
