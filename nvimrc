@@ -45,7 +45,9 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'tomasr/molokai'
-
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'sebastianmarkow/deoplete-rust'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
@@ -88,6 +90,7 @@ Plug 'davidhalter/jedi-vim'
 
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
+Plug 'carlitux/deoplete-ternjs'
 
 "" OCaml Bundle
 Plug 'def-lkb/ocp-indent-vim'
@@ -362,7 +365,7 @@ noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gf :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
 " session management
@@ -657,3 +660,11 @@ endif
  call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
  call deoplete#custom#set('_', 'converters', ['converter_remove_paren'])
  call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+
+ ""deoplete-rust
+let g:deoplete#sources#rust#racer_binary='/Users/gernest/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/Users/gernest/rust/src'
+
+"deoplete-ternjs
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 0
