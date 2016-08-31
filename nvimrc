@@ -91,6 +91,8 @@ Plug 'davidhalter/jedi-vim'
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
 Plug 'carlitux/deoplete-ternjs'
+Plug 'othree/es.next.syntax.vim'
+ Plug 'mhartington/deoplete-typescript'
 
 "" OCaml Bundle
 Plug 'def-lkb/ocp-indent-vim'
@@ -114,6 +116,9 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
+
+"Elm 
+Plug 'elmcast/elm-vim'
 
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
@@ -668,3 +673,5 @@ let g:deoplete#sources#rust#rust_source_path='/Users/gernest/rust/src'
 "deoplete-ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
+
+" Elm
