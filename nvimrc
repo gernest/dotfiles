@@ -546,7 +546,7 @@ let g:tagbar_type_go = {
 augroup FileType go
   au!
   au FileType go nmap gd <Plug>(go-def)
-  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+  au FileType go nmap gv  <Plug>(go-def-vertical)
 
   au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
   au FileType go nmap <Leader>db <Plug>(go-doc-browser)
@@ -561,7 +561,7 @@ au FileType go nmap <Leader>in <Plug>(go-info)
 au FileType go nmap <Leader>ii <Plug>(go-implements)
 
 au FileType go nmap <leader>r  <Plug>(go-run)
-au FileType go nmap <leader>b  <Plug>(go-build)
+"au FileType go nmap <leader>b  <Plug>(go-build)
 au FileType go nmap <leader>g  <Plug>(go-gbbuild)
 au FileType go nmap <leader>l <Plug>(go-metalinter)
 au FileType go nmap <leader>t  <Plug>(go-test)
@@ -675,3 +675,7 @@ let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 
 " Elm
+let g:polyglot_disabled = ['elm']
+let g:elm_detailed_complete = 1
+let g:elm_format_autosave = 1
+let g:elm_syntastic_show_warnings = 1
