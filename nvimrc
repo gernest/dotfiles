@@ -667,8 +667,8 @@ endif
  call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
 
  ""deoplete-rust
-let g:deoplete#sources#rust#racer_binary='/Users/gernest/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/Users/gernest/rust/src'
+let g:deoplete#sources#rust#racer_binary=$RACER_SRC_PATH
+let g:deoplete#sources#rust#rust_source_path=$RUST_SRC_PATH
 
 "deoplete-ternjs
 let g:tern_request_timeout = 1
