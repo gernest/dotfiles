@@ -7,7 +7,7 @@ endif
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "javascript,ruby,python,c,html,lua,ocaml,go"
+let g:vim_bootstrap_langs = "javascript,ruby,python,c,html,lua,go"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
 if !filereadable(vimplug_exists)
@@ -94,8 +94,6 @@ Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/es.next.syntax.vim'
  Plug 'mhartington/deoplete-typescript'
 
-"" OCaml Bundle
-Plug 'def-lkb/ocp-indent-vim'
 
 "" Lua Bundle
 Plug 'xolox/vim-lua-ftplugin'
@@ -520,12 +518,7 @@ augroup vimrc-javascript
 augroup END
 
 
-" Add Merlin to rtp
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
-" Set Merlin as Syntastic checker for OCaml
-let g:syntastic_ocaml_checkers = ['merlin']
 
 
 
@@ -669,6 +662,11 @@ endif
  ""deoplete-rust
 let g:deoplete#sources#rust#racer_binary=$RACER_SRC_PATH
 let g:deoplete#sources#rust#rust_source_path=$RUST_SRC_PATH
+
+"Rust.vim
+"run rustfmt on save
+let g:rustfmt_autosave = 1
+let g:rust_recommended_style = 1
 
 "deoplete-ternjs
 let g:tern_request_timeout = 1
