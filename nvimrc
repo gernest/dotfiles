@@ -44,7 +44,6 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
-Plug 'tomasr/molokai'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'sebastianmarkow/deoplete-rust'
@@ -92,7 +91,11 @@ Plug 'davidhalter/jedi-vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/es.next.syntax.vim'
- Plug 'mhartington/deoplete-typescript'
+Plug 'ternjs/tern_for_vim', {'do':'npm install '}
+
+
+" JSON
+Plug 'elzr/vim-json'
 
 
 "" Lua Bundle
