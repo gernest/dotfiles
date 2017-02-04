@@ -88,7 +88,7 @@ Plug 'vim-scripts/c.vim'
 Plug 'davidhalter/jedi-vim'
 
 "" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/es.next.syntax.vim'
 Plug 'ternjs/tern_for_vim', {'do':'npm install '}
